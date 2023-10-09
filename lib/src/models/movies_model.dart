@@ -6,14 +6,14 @@ class MoviesModel {
   final String title;
   final String releaseDate;
   final String posterPath;
-  final List<int> genres;
+  final bool adult;
   final bool favorite;
   MoviesModel({
     required this.id,
     required this.title,
     required this.releaseDate,
     required this.posterPath,
-    required this.genres,
+    required this.adult,
     required this.favorite,
   });
 
@@ -25,7 +25,7 @@ class MoviesModel {
       'title': title,
       'release_date': releaseDate,
       'poster_path': posterPath,
-      'genre_ids': genres,
+      'adult': adult,
       'favorite': favorite,
     };
   }
@@ -36,7 +36,7 @@ class MoviesModel {
       title: map['title'] ?? '',
       releaseDate: map['release_date'] ?? '',
       posterPath: map['poster_path'] ?? '',
-      genres: List<int>.from(map['genre_ids']),
+      adult: map['favorite'] ?? false,
       favorite: map['favorite'] ?? false,
     );
   }

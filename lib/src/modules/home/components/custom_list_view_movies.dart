@@ -1,8 +1,5 @@
-import 'package:arquitetura_mvc/src/core/colors/custom_colors.dart';
 import 'package:arquitetura_mvc/src/core/ulrs/urls.dart';
-import 'package:arquitetura_mvc/src/data/repositories/moviesLocal/movies_local_repository_impl.dart';
 import 'package:arquitetura_mvc/src/models/movies_model.dart';
-import 'package:arquitetura_mvc/src/modules/favorites/favorites_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,14 +13,7 @@ class CustomListViewMovies extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final moviesLocalRepository = Get.find<MoviesLocalRepositoryImpl>();
-    final favoriteMoviesController = Get.put(FavoritesController());
-    final listTitle = [];
 
-    return Obx(() {
-      for (var m in favoriteMoviesController.favoriteMovies) {
-        listTitle.add(m.title);
-      }
 
       return ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -77,45 +67,7 @@ class CustomListViewMovies extends StatelessWidget {
                       clipBehavior: Clip.antiAlias,
                       child: SizedBox(
                         height: Get.height * 0.04,
-                        child: IconButton(
-                            iconSize: Get.height * 0.02,
-                            onPressed: () {
-                              if (!listTitle.contains(movies[index].title)) {
-                                moviesLocalRepository.postMoviesLocal(
-                                  data: {
-                                    'id': movies[index].id,
-                                    'title': movies[index].title,
-                                    'release_date': movies[index].releaseDate,
-                                    'poster_path': movies[index].posterPath,
-                                    'genre_ids': movies[index].genres,
-                                    'favorite': true,
-                                  },
-                                );
-                                Get.snackbar(
-                                  'Filmes favoritos',
-                                  '${movies[index].title} adicionado!!!' ,
-                                  snackPosition: SnackPosition.TOP,
-                                  icon: const Icon(Icons.cached_outlined),
-                                  duration: const Duration(seconds: 3),
-                                );
-                              } else {
-                                Get.snackbar(
-                                  'Filmes favoritos',
-                                  'Erro, ${movies[index].title}Já foi adicionado' ,
-                                  snackPosition: SnackPosition.TOP,
-                                  icon: const Icon(Icons.cached_outlined),
-                                  duration: const Duration(seconds: 3),
-                                );
-                              }
-
-                              favoriteMoviesController.searchFavoritesMovies();
-                            },
-                            icon: Icon(
-                              Icons.favorite_outlined,
-                              color: listTitle.contains(movies[index].title)
-                                  ? CustomColors.primary
-                                  : CustomColors.gray,
-                            )),
+                     
                       ),
                     ),
                   )
@@ -125,6 +77,6 @@ class CustomListViewMovies extends StatelessWidget {
           );
         },
       );
-    });
+
   }
 }
