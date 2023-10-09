@@ -1,0 +1,39 @@
+{
+    "favorites": [
+        {
+            "id": 5,
+            "title": "Velozes & Furiosos 10",
+            "release_date": "2023-05-17",
+            "poster_path": "/4CWoalqAsRzXD9AFbByD1KnH40E.jpg",
+            "genre_ids": [
+                28,
+                80,
+                53
+            ],
+            "favorite": true
+        },
+        {
+            "id": 6,
+            "title": "John Wick 4: Baba Yaga",
+            "release_date": "2023-03-22",
+            "poster_path": "/rXTqhpkpj6E0YilQ49PK1SSqLhm.jpg",
+            "genre_ids": [
+                28,
+                53,
+                80
+            ],
+            "favorite": true
+        },
+        {
+            "id": 7,
+            "title": "O Padrinho",
+            "release_date": "1972-03-14",
+            "poster_path": "/oJagOzBu9Rdd9BrciseCm3U3MCU.jpg",
+            "genre_ids": [
+                18,
+                80
+            ],
+            "favorite": true
+        }
+    ]
+}
