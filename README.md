@@ -1,17 +1,42 @@
-# Arquitetura do Projeto Flutter
+# <div align="center"> Arquitetura do Projeto Flutter </div>
 
-Este projeto utiliza uma arquitetura modular e organizada para facilitar o desenvolvimento e manutenção do código.
+# Arquitetura Modular MVC+R
+
+## Sobre
+
+Esta arquitetura é um híbrido entre o padrão MVC (Model-View-Controller) e o Repository Pattern. Além disso, adota uma organização modular, onde funcionalidades específicas são encapsuladas em seus próprios módulos.
+
+## Descrição
+
+### MVC
+
+- **Model**: Representa os dados e a lógica de negócios. Localizado principalmente em `models` e parte de `data/repositories`.
+- **View**: Representa a interface do usuário. Exemplos incluem arquivos como `home_page.dart`.
+- **Controller**: Manipula a entrada do usuário e atualiza o Model e a View. Exemplo é o `home_controller.dart`.
+
+### Repository Pattern
+
+A presença de um repositório específico (`data/repositories`) sugere uma separação clara entre a lógica de negócios e a lógica de acesso a dados.
+
+### Modularização
+
+A organização modular permite que funcionalidades ou recursos específicos sejam encapsulados em seus próprios módulos, facilitando a manutenção e escalabilidade.
+
+## Nome da Arquitetura
+
+O nome proposto para esta arquitetura é **"Modular MVC+R"** ou **"MVC Repository Modular"**, que indica um MVC aprimorado com Repository e organizado de forma modular.
 
 ## 📂 Estrutura de Diretórios
 
-📂 lib
-├─ 📂 src
-│ ├─ 📂 core
-│ ├─ 📂 data
-│ ├─ 📂 models
-│ ├─ 📂 modules
-│ └─ 📄 app_mvc.dart
-└─ 📄 main.dart
+📂 **lib**  
+├─ 📂 **src**  
+│ ├─ 📂 **core**  
+│ ├─ 📂 **data**  
+│ ├─ 📂 **models**  
+│ ├─ 📂 **modules**  
+│ └─ 📄 **app_mvc.dart**  
+└─ 📄 **main.dart**  
+
 
 ### `src`
 
@@ -52,66 +77,37 @@ Dentro da pasta `src`, encontramos os componentes principais do nosso projeto.
 - `app_mvc.dart`: Ponto de entrada do modelo MVC.
 - `main.dart`: Ponto de entrada principal do aplicativo.
 
-# Arquitetura Modular MVC+R
-
-## Sobre
-
-Esta arquitetura é um híbrido entre o padrão MVC (Model-View-Controller) e o Repository Pattern. Além disso, adota uma organização modular, onde funcionalidades específicas são encapsuladas em seus próprios módulos.
 
 ## Estrutura
 
-📂 lib
-├─ 📂 src
-│ ├─ 📂 core
-│ │ ├─ 📂 colors
-│ │ ├─ 📂 images
-│ │ ├─ 📂 routes
-│ │ ├─ 📂 themes
-│ │ ├─ 📂 utils
-│ │ └─ 📂 widgets
-│ ├─ 📂 data
-│ │ ├─ 📂 client
-│ │ │ ├─ 📄 dio_client.dart
-│ │ │ └─ 📄 rest_client_interface.dart
-│ │ └─ 📂 repositories
-│ │ └─ 📂 movies
-│ │ ├─ 📄 movies_repository_impl.dart
-│ │ └─ 📄 movies_repository.dart
-│ ├─ 📂 models
-│ │ └─ 📄 movies_model.dart
-│ ├─ 📂 modules
-│ │ └─ 📂 home
-│ │ ├─ 📂 components
-│ │ ├─ 📄 home_controller.dart
-│ │ ├─ 📄 home_module.dart
-│ │ ├─ 📄 home_page.dart
-│ │ └─ 📄 home_states.dart
-│ └─ 📄 app_mvc.dart
-└─ 📄 main.dart
-
-
-## Descrição
-
-### MVC
-
-- **Model**: Representa os dados e a lógica de negócios. Localizado principalmente em `models` e parte de `data/repositories`.
-- **View**: Representa a interface do usuário. Exemplos incluem arquivos como `home_page.dart`.
-- **Controller**: Manipula a entrada do usuário e atualiza o Model e a View. Exemplo é o `home_controller.dart`.
-
-### Repository Pattern
-
-A presença de um repositório específico (`data/repositories`) sugere uma separação clara entre a lógica de negócios e a lógica de acesso a dados.
-
-### Modularização
-
-A organização modular permite que funcionalidades ou recursos específicos sejam encapsulados em seus próprios módulos, facilitando a manutenção e escalabilidade.
-
-## Nome da Arquitetura
-
-O nome proposto para esta arquitetura é **"Modular MVC+R"** ou **"MVC Repository Modular"**, que indica um MVC aprimorado com Repository e organizado de forma modular.
-
-**Nota**: Os nomes das arquiteturas são frequentemente adotados com base em padrões reconhecidos na indústria. Ao apresentar uma nova nomenclatura, é útil fornecer uma documentação ou explicação clara sobre o que ela significa e como se diferencia de outros padrões conhecidos.
-
+📂 **lib**  
+├─ 📂 **src**  
+│ ├─ 📂 **core**  
+│ │ ├─ 📂 **colors**  
+│ │ ├─ 📂 **images**  
+│ │ ├─ 📂 **routes**  
+│ │ ├─ 📂 **themes**  
+│ │ ├─ 📂 **utils**  
+│ │ └─ 📂 **widgets**  
+│ ├─ 📂 **data**  
+│ │ ├─ 📂 **client**  
+│ │ │ ├─ 📄 **dio_client.dart**  
+│ │ │ └─ 📄 **rest_client_interface.dart**  
+│ │ └─ 📂 **repositories**  
+│ │ └─ 📂 **movies**  
+│ │ ├─ 📄 **movies_repository_impl.dart**  
+│ │ └─ 📄 **movies_repository.dart**  
+│ ├─ 📂 **models**  
+│ │ └─ 📄 **movies_model.dart**  
+│ ├─ 📂 **modules**  
+│ │ └─ 📂 **home**  
+│ │ ├─ 📂 **components**  
+│ │ ├─ 📄 **home_controller.dart**  
+│ │ ├─ 📄 **home_module.dart**  
+│ │ ├─ 📄 **home_page.dart**  
+│ │ └─ 📄 **home_states.dart**  
+│ └─ 📄 **app_mvc.dart**  
+└─ 📄 **main.dart**  
 
 ## 🌟 Conclusão
 
