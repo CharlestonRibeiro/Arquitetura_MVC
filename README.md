@@ -26,7 +26,7 @@ A organização modular permite que funcionalidades ou recursos específicos sej
 
 O nome proposto para esta arquitetura é **"Modular MVC+R"** ou **"MVC Repository Modular"**, que indica um MVC aprimorado com Repository e organizado de forma modular.
 
-## 📂 Estrutura de Diretórios
+## 📂 Estrutura de Diretórios, Camadas Principais
 
 📂 **lib**  
 ├─ 📂 **src**  
