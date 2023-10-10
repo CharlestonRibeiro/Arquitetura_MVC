@@ -8,9 +8,10 @@ class HomeController extends GetxController {
   final popularMovies = <MoviesModel>[].obs;
   final topMovies = <MoviesModel>[].obs;
   final _moviesRepository = Get.find<MoviesRepositoryImpl>();
-  
-   Rx<PopularMoviesState> popularMoviesState = PopularMoviesState.initiaPopularMoviesState.obs;
-   Rx<TopMoviesState> topMoviesState = TopMoviesState.initiaTopMoviesState.obs;
+
+  Rx<PopularMoviesState> popularMoviesState =
+      PopularMoviesState.initiaPopularMoviesState.obs;
+  Rx<TopMoviesState> topMoviesState = TopMoviesState.initiaTopMoviesState.obs;
 
   @override
   void onInit() {
@@ -35,8 +36,8 @@ class HomeController extends GetxController {
     try {
       final popularMoviesData = await _moviesRepository.getPopularMovies();
 
-      final moviesFinal = popularMoviesData.where((e) => e.adult == false).toList();
-
+      final moviesFinal =
+          popularMoviesData.where((e) => e.adult == false).toList();
 
       popularMovies.assignAll(moviesFinal);
       popularMoviesState.value = PopularMoviesState.successPopularMoviesState;
@@ -55,11 +56,9 @@ class HomeController extends GetxController {
   Future searchTopMovies() async {
     topMoviesState.value = TopMoviesState.loadingTopMoviesState;
     try {
-      final List<MoviesModel> topMoviesData  =
-          await _moviesRepository.getTopRetadeMovies();
+      final topMoviesData = await _moviesRepository.getTopRetadeMovies();
 
-      final moviesFinal = topMoviesData..where((e) => e.adult == false).toList();
-
+      final moviesFinal = topMoviesData.where((e) => e.adult == false).toList();
       topMovies.assignAll(moviesFinal);
       topMoviesState.value = TopMoviesState.successTopMoviesState;
     } catch (e) {

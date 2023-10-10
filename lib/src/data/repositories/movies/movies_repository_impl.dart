@@ -10,30 +10,32 @@ class MoviesRepositoryImpl implements MoviesRepository {
   final dioClient = Get.put(DioClient());
 
   @override
-  Future getPopularMovies() async {
+  Future<List<MoviesModel>> getPopularMovies() async {
     try {
       final popularMovies =
           await dioClient.getData(url: Urls.baseUrl + Urls.urlPopularMovies);
-      final result = popularMovies['results']
-          .map((movieMap) => MoviesModel.fromMap(movieMap))
+      final List<MoviesModel> result = popularMovies['results']
+          .map<MoviesModel>((movieMap) => MoviesModel.fromMap(movieMap))
           .toList();
       return result;
     } catch (e) {
       log(e.toString());
+      rethrow;
     }
   }
 
   @override
-  Future getTopRetadeMovies() async {
+  Future <List<MoviesModel>> getTopRetadeMovies() async {
     try {
       final topMovies =
           await dioClient.getData(url: Urls.baseUrl + Urls.urlTopMovies);
-      final result = topMovies['results']
-          .map((movieMap) => MoviesModel.fromMap(movieMap))
+      final List<MoviesModel> result = topMovies['results']
+          .map<MoviesModel>((movieMap) => MoviesModel.fromMap(movieMap))
           .toList();
       return result;
     } catch (e) {
       log(e.toString());
+      rethrow;
     }
   }
 }
