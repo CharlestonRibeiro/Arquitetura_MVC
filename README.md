@@ -94,18 +94,18 @@ Dentro da pasta `src`, encontramos os componentes principais do nosso projeto.
 │ │ │ ├─ 📄 **dio_client.dart**  
 │ │ │ └─ 📄 **rest_client_interface.dart**  
 │ │ └─ 📂 **repositories**  
-│ │   └─ 📂 **movies**  
-│ │     ├─ 📄 **movies_repository_impl.dart**  
-│ │     └─ 📄 **movies_repository.dart**  
+│ │ │  └─ 📂 **movies**  
+│ │ │  │  ├─ 📄 **movies_repository_impl.dart**  
+│ │ │  │  └─ 📄 **movies_repository.dart**  
 │ ├─ 📂 **models**  
 │ │ └─ 📄 **movies_model.dart**  
 │ ├─ 📂 **modules**  
 │ │ └─ 📂 **home**  
-│ │   ├─ 📂 **components**  
-│ │   ├─ 📄 **home_controller.dart**  
-│ │   ├─ 📄 **home_module.dart**  
-│ │   ├─ 📄 **home_page.dart**  
-│ │   └─ 📄 **home_states.dart**  
+│ │ │ ├─ 📂 **components**  
+│ │ │ ├─ 📄 **home_controller.dart**  
+│ │ │ ├─ 📄 **home_module.dart**  
+│ │ │ ├─ 📄 **home_page.dart**  
+│ │ │ └─ 📄 **home_states.dart**  
 │ └─ 📄 **app_mvc.dart**  
 └─ 📄 **main.dart**  
 
